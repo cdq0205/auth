@@ -1,0 +1,31 @@
+server:
+  port: 9000
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/springboot-auth-1?characterEncoding=utf-8
+    username: root
+    password: 123
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 8
+      min-idle: 3
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+# mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.imooc.pojo
+
+# pagehelper��ҳ���
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+# ��־
+logging:
+  config: classpath:logback-spring.xml
+
